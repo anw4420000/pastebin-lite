@@ -116,7 +116,7 @@ export default function HomePage() {
             wordBreak: "break-word",
           }}
         >
-          Paste URL:{" "}
+          Paste URL: {" "}
           <a
             href={result}
             target="_blank"

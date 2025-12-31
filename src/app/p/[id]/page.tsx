@@ -40,12 +40,13 @@ export default async function PastePage({
       }}
     >
       <h1 style={{ textAlign: "center", color: "#4a90e2", marginBottom: "2rem" }}>
-        Paste
+        Paste Content
       </h1>
 
       <div
         style={{
           backgroundColor: "#f5f5f5",
+          color: "#333",
           padding: "1.5rem",
           borderRadius: "10px",
           boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
@@ -67,7 +68,7 @@ export default async function PastePage({
             fontWeight: "bold",
           }}
         >
-          ← Create a new paste
+          ← Create New Paste
         </Link>
       </p>
     </main>
