@@ -1,19 +1,17 @@
-import { prisma } from "@/lib/prisma";
+// src/app/api/healthz/route.ts
+import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    // Check database connectivity
+    const { prisma } = await import("@/lib/prisma");
+
     await prisma.$queryRaw`SELECT 1`;
 
-    return Response.json(
-      { ok: true },
-      { status: 200 }
+    return NextResponse.json({ ok: true });
+  } catch {
+    return NextResponse.json(
+      { ok: false, error: "Database not reachable" },
+      { status: 500 }
     );
-  } catch (error) {
-  return Response.json(
-    { ok: false, error: "Database not reachable" },
-    { status: 500 }
-  );
-}
-
+  }
 }
